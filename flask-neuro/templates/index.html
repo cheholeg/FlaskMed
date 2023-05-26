@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Медицина</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <div class="container d-flex flex-column align-items-center justify-content-center">
+        <h1 class="display-1">Медицина</h1>
+        <table class="table table-borderless align-middle ">
+            <thead>
+                <tr>
+                <th class="col-lg-2 text-center">API</th>
+                  <!--<th class="col-lg-2"><a href="{{ url_for('new_post') }}"><button type="button" class="btn btn-secondary">Добавить новые данные</button></a></th>-->
+                  <th class="col-lg-5 text-center">Аритмия</th>
+                  <th class="col-lg-5 text-center">Положение датчиков</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                            <li><a href="{{ url_for('API_PDB') }}" class="link-info">Анализ белков</a></li><br>
+                            
+                        <!--<ul>
+                            {% for post in posts %}
+                            <li><a href="{{ url_for('get_post', post_id=post['id']) }}" class="link-info">{{ post['title'] }}</a></li>
+                            {% endfor %}
+                        </ul>-->
+                    </th>
+                    <th scope="row">
+                        <div class="col">
+                            <form class="input-group mb-3 " action = "/arrytmia" method = "POST" 
+                            enctype = "multipart/form-data">
+                            <input class="input-group-text" for="inputGroupFile01" type="file" name="file" multiple="">
+                            <br><br>
+                            <input class="btn btn-secondary" type = "submit"/>
+                            <input class="btn btn-secondary" type = "reset"/>
+                        </form>
+                        </div>
+                    </th>
+
+                    <th scope="row">
+                        <div class="col">
+                            <form class="input-group mb-3 " action = "/dislocation" method = "POST" 
+                            enctype = "multipart/form-data">
+                            <input class="input-group-text" for="inputGroupFile01" type="file" name="file" multiple="">
+                            <br><br>
+                            <input class="btn btn-secondary" type = "submit"/>
+                            <input class="btn btn-secondary" type = "reset"/>
+                        </form>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <form action = "/API_MED" method="post" class ="text-center">
+                            <div class="form-group alert alert-secondary">
+                              <label for="exampleInputEmail1">MED API</label>
+                              <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Drug name">
+                              <small class="form-text text-muted">Введите название лекарства, например: advil, tylenol, metformin, Salbutamol</small>
+                            </div>
+                            <button type="submit" class="btn btn-secondary">Отправить</button>
+                          </form>
+                    </th>
+                    <th scope="row"><p class="lead fs-4">
+                        Предлагаемая телемедицинская услуга предназначена для классификации тяжелых заболеваний сердечно-сосудистой системы, которые могут привести к внезапной сердечной смерти. Среди выявляемых диагнозов - фибрилляция предсердий, наджелудочковая аритмия, злокачественная желудочковая эктопия, а также нормальный синусовый ритм.
+                      </p>
+                      <p class="lead fs-6 text-muted">
+                        Могут быть загружены только записи ЭКГ WFDB (база данных осциллограмм).
+
+Одна запись ЭКГ содержит по меньшей мере два файла ".data" и ".hea". Одна запись ЭКГ может состоять до восьми файлов
+
+Значения в диапазоне 0,9 - 1 указывают на то, что файл относится к соответствующему диагнозу.
+
+Значения в диапазоне от нуля до 0,89 указывают на то, что файл не соответствует соответствующему диагнозу.
+                      </p>
+                        </th>
+                    <th scope="row"><p class="lead fs-4">
+                        Предлагаемая услуга предназначена для выявления фактов ошибочного размещения электродов.
+                      </p>
+                        
+                        
+                        <p class="lead fs-6 text-muted">
+                        Файлы для загрузки (требования к входным файлам)
+Файлы должны быть в формате «.edf». В качестве исходных данных используются оцифрованные данные. электрокардиограммы в формате европейского файла данных (EDF) с частотой дискретизации 500 Гц.
+файл «.edf», содержащий записи ЭКГ в 12 отведениях: I, II, III, AvR, AvL, aVF, V1-V6 (C1-C6)
+                      </p>
+                        
+
+                    </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+                
+        
+</body>
+</html>
