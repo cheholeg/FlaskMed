@@ -1,6 +1,6 @@
 # FlaskMed
 ____
-##Installation
+## Installation
 
 Python and the libraries included in the requirements file will be useful to run, for installation you need to enter:
 
