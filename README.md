@@ -1,5 +1,11 @@
 # FlaskMed
 ____
+##Installation
+
+Python and the libraries included in the requirements file will be useful to run, for installation you need to enter:
+
+`python -m pip install -r requirements.txt`
+
 To launch the application, just type 
 
 `python app.py` 
